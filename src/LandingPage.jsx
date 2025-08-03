@@ -1,13 +1,13 @@
 import Image1 from './assets/Image1.jpg'
 import React from 'react';
-function LandingPage({isAdmin, setShowLogin, setShowEdit}){
+function LandingPage({isAdmin, setShowLogin, setShowEdit, scrollToproperty, scrollToabout, scrollTocontact}){
     return(
         <>
         <div className="bg-[#212121] 3xs:h-[450px] sm:h-[600px] md:h-[600px] lg:h-[100vh] mb-[20px]">
             {/** bg container*/}
-            <div className="flex flex-col h-[400px] bg-center bg-cover p-[10px] sm:h-[500px] md:h-[500px] lg:h-[100vh]" style={{ backgroundImage: `url(${Image1})` }}>
+            <div className=" relative flex flex-col h-[400px] bg-center bg-cover p-[10px] sm:h-[500px] md:h-[500px] lg:h-[100vh]" style={{ backgroundImage: `url(${Image1})` }}>
                  {/**admin container*/}
-                <div className="flex">
+                    <div className="fixed">
                      {!isAdmin ? (
                         <button
                             onClick={() => setShowLogin(true)}
@@ -26,6 +26,12 @@ function LandingPage({isAdmin, setShowLogin, setShowEdit}){
                         </div>
                         )}
                 </div>
+                <div className='fixed hidden  t-0 left-[50%] -translate-x-1/2 bg-black/10 backdrop-blur-sm bg-200 lg:flex justify-between w-[400px] items-center p-2 text-white rounded-[50px] text-[20px]'>
+                        <p onClick={scrollToproperty} className='cursor-pointer'>Property</p>
+                        <p onClick={scrollToabout} className='cursor-pointer'>About Us</p>
+                        <p onClick={scrollTocontact} className='cursor-pointer'>Contacts</p>
+                </div>
+
                  {/** Grand view container*/}
                 <div className="3xs: hidden md:block gap:0">
                         <p className="flex text-[200px] font-bold text-white leading-none m-0 md1:text-[220px] md:pl-[50px] 1lg:text-[250px] 2lg:text-[280px] 4xl:text-[300px]">Grand</p>

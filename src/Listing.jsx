@@ -5,7 +5,7 @@ import Arrow from './assets/location.png'
 
 export default function Listing({posts}) {
   return (
-    <div className="flex justify-center items-center h-[auto] bg-[#212121]">
+    <div className="flex justify-center items-center h-[auto] bg-[#212121] p-4">
       <div className="grid grid-cols-1 grid-rows-[auto] gap-3 h-[auto] w-[95%] bg-[#212121] xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
           {posts.map((post, idx) => (
             <div
